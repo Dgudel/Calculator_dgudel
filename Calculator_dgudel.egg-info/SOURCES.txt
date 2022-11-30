@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+main.py
+pyproject.toml
+Calculator_dgudel.egg-info/PKG-INFO
+Calculator_dgudel.egg-info/SOURCES.txt
+Calculator_dgudel.egg-info/dependency_links.txt
+Calculator_dgudel.egg-info/top_level.txt
