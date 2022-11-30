@@ -55,11 +55,11 @@ class Testing:
                         result > sys.maxsize
                         print("The number is too large.")
                 elif cls.input[0] == "/": # the division is performed if a client enters '/' and a number
-             #       try:
-                    result = result / float(cls.input[1])
-                    print(f'Result: {result}')
-        #            except ZeroDivisionError: # the division by zero is not allowed, a client receives the following message.
-          #              print('Division by zero is not a legal mathematical operation.')
+                   try:
+                        result = result / float(cls.input[1])
+                        print(f'Result: {result}')
+                   except ZeroDivisionError: # the division by zero is not allowed, a client receives the following message.
+                        print('Division by zero is not a legal mathematical operation.')
                 elif cls.input[0] == "sqrt": # if a client enters 'sqrt' a square root is taken from the number kept in the memory as a result o a previous operation
                     if len(cls.input) > 1: # the client should not enter more than one string.
                         print(f'Please, just enter <sqrt>.')
@@ -84,8 +84,13 @@ class Testing:
                     print(f'Please, enter a mathematical operator and a number,\n'
                     'separated by a space.')
                     i += 1
-            except:
-                assert ValueError(print("Value Error."))
+            except ValueError:
+                assert (print("Value Error."))
+                i += 1
+            except IndexError:
+                assert IndexError(print("Index Error."))
+                i += 1
 
 
-Testing.test_calculate()
+if __name__ == '__main__':
+    Testing.test_calculate()
